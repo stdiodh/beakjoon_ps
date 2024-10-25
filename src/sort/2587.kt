@@ -1,4 +1,4 @@
-package bronze
+package sort
 
 import java.io.StreamTokenizer
 
@@ -8,7 +8,7 @@ fun main() = with(StreamTokenizer(System.`in`.bufferedReader())){
         return nval.toInt()
     }
 
-    val n = nextInt()
-    val arr = IntArray(n) {nextInt()}.sortedArray()
-    arr.forEach { println(it) }
+    val arr = IntArray(5) { nextInt() }.sortedArray()
+    println("${arr.average().toInt()}")
+    println("${arr[2]}")
 }
