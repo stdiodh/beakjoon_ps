@@ -1,23 +1,24 @@
 package silver
 
-fun main() {
+import java.io.StreamTokenizer
 
-    var result = 0
+fun main() = with(StreamTokenizer(System.`in`.bufferedReader())){
+    fun nextInt() : Int { nextToken(); return nval.toInt() }
+    fun nextString() : String { nextToken(); return sval }
 
-    repeat(readln().toInt()){
-        val word = readln()
+    var n = nextInt()
 
-        for(x in word.indices){
-            if(x != word.length -1){
-                if(word[x] == word[x + 1]){
-                    continue
-                } else if (word[x] in word.substring(x+1, word.length)){
-                    break
-                }
-            } else {
-                result += 1
+    repeat(n){
+        val str = nextString()
+        val history = mutableListOf<Char>()
+        for(x in str){
+            if (!history.contains(x)){
+                history.add(x)
+            } else if (history.last() != x) {
+                n -= 1
+                break
             }
         }
     }
-    println(result)
+    println(n)
 }
