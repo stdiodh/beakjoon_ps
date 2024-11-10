@@ -5,10 +5,9 @@ import java.util.LinkedList
 import java.util.Queue
 
 fun main() = with(StreamTokenizer(System.`in`.bufferedReader())){
-    fun nextInt() : Int { nextToken(); return nval.toInt()}
+    fun nextInt() : Int { nextToken(); return nval.toInt() }
 
     val r = nextInt()
-    val sb = StringBuilder()
     repeat(r) {
         val n = nextInt(); val m = nextInt()
         val queue: Queue<IntArray> = LinkedList()
