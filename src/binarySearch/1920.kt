@@ -1,4 +1,4 @@
-package silver
+package binarySearch
 
 import java.io.StreamTokenizer
 
